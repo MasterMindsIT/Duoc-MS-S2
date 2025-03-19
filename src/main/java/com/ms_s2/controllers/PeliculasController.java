@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
-@RequestMapping("/peliculas")
+@RequestMapping("/peliculas") //utilizara la raiz/peliculas para obtener todos los datos
 public class PeliculasController {
 
     private DataPeliculas dataPeliculas = new DataPeliculas();
         
-        @GetMapping
+        @GetMapping //No precisa ninguna ruta adicional, ya que se encuentra en la raiz por el metodo get
         public ResponseEntity<List<Peliculas>> allPeliculas() {
             return ResponseEntity.ok(dataPeliculas.getPeliculas());
         }
         
-        @GetMapping("/{id}")
+        @GetMapping("/{id}")// se le pasa el id de la pelicula que se quiere obtener y lo captura @PathVariable
         public ResponseEntity<?> getPelicula(@PathVariable int id) {
             Peliculas pelicula = dataPeliculas.getPeliculaById(id);
             if (pelicula == null) {

@@ -6,9 +6,9 @@ import java.util.List;
 import com.ms_s2.entities.Peliculas;
 
 public class DataPeliculas {
-     List<Peliculas> peliculas;
+     List<Peliculas> peliculas; // Lista de peliculas
 
-    // Constructor to initialize and populate the list
+    // Constructor con las peliculas
     public DataPeliculas() {
         peliculas = new ArrayList<>();
         peliculas.add(new Peliculas(1, "Titanic", 1997, "James Cameron", "Drama", "Un joven pobre y un joven rico se enamoran en un barco que se hunde"));
@@ -20,12 +20,12 @@ public class DataPeliculas {
         peliculas.add(new Peliculas(7, "Avatar", 2009, "James Cameron", "Ciencia Ficción", "Un soldado se une a los Na'vi en Pandora."));
     }
 
-    // Getter for peliculas
+    // Obtenemos todas las peliculas
     public List<Peliculas> getPeliculas() {
         return peliculas;
     }
 
-    // get by id
+    // obtenemos una pelicula por su id
     public Peliculas getPeliculaById(int id) {
         for (Peliculas pelicula : peliculas) {
             if (pelicula.getId() == id) {
@@ -33,6 +33,21 @@ public class DataPeliculas {
             }
         }
         return null;
+    }
+
+    // Agregamos una pelicula
+    public void addPelicula(Peliculas pelicula) {
+        peliculas.add(pelicula);
+    }
+
+    // Eliminamos una pelicula por su id
+    public void deletePelicula(int id) {
+        for (Peliculas pelicula : peliculas) {
+            if (pelicula.getId() == id) {
+                peliculas.remove(pelicula);
+                break;
+            }
+        }
     }
 
 }

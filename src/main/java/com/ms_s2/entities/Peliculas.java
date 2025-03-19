@@ -1,13 +1,13 @@
 package com.ms_s2.entities;
 
-public class Peliculas {
+public class Peliculas { //Entidad Peliculas
     public int id;
     public String titulo;
     public int anio;
     public String director;
     public String genero;
     public String sinopsis;
-
+    //constructor con todos los atributos
     public Peliculas(int id, String titulo, int anio, String director, String genero, String sinopsis) {
         this.id = id;
         this.titulo = titulo;
@@ -17,6 +17,7 @@ public class Peliculas {
         this.sinopsis = sinopsis;
     }
 
+    //Aqui van los getters y setters
     public int getId() {
         return id;
     }
@@ -65,5 +66,9 @@ public class Peliculas {
         this.sinopsis = sinopsis;
     }
     
-    
+    //funcion para mostrar todo el objeto
+    @Override
+    public String toString() {
+        return "Peliculas{" + "id=" + id + ", titulo=" + titulo + ", anio=" + anio + ", director=" + director + ", genero=" + genero + ", sinopsis=" + sinopsis + '}';
+    }
 }
